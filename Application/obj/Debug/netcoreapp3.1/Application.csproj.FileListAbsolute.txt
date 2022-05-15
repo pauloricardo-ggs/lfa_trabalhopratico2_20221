@@ -1,0 +1,14 @@
+C:\Dev\lfa_trabalhopratico2_20221\Application\bin\Debug\netcoreapp3.1\Application.exe
+C:\Dev\lfa_trabalhopratico2_20221\Application\bin\Debug\netcoreapp3.1\Application.deps.json
+C:\Dev\lfa_trabalhopratico2_20221\Application\bin\Debug\netcoreapp3.1\Application.runtimeconfig.json
+C:\Dev\lfa_trabalhopratico2_20221\Application\bin\Debug\netcoreapp3.1\Application.runtimeconfig.dev.json
+C:\Dev\lfa_trabalhopratico2_20221\Application\bin\Debug\netcoreapp3.1\Application.dll
+C:\Dev\lfa_trabalhopratico2_20221\Application\bin\Debug\netcoreapp3.1\Application.pdb
+C:\Dev\lfa_trabalhopratico2_20221\Application\obj\Debug\netcoreapp3.1\Application.csproj.AssemblyReference.cache
+C:\Dev\lfa_trabalhopratico2_20221\Application\obj\Debug\netcoreapp3.1\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\lfa_trabalhopratico2_20221\Application\obj\Debug\netcoreapp3.1\Application.AssemblyInfoInputs.cache
+C:\Dev\lfa_trabalhopratico2_20221\Application\obj\Debug\netcoreapp3.1\Application.AssemblyInfo.cs
+C:\Dev\lfa_trabalhopratico2_20221\Application\obj\Debug\netcoreapp3.1\Application.csproj.CoreCompileInputs.cache
+C:\Dev\lfa_trabalhopratico2_20221\Application\obj\Debug\netcoreapp3.1\Application.dll
+C:\Dev\lfa_trabalhopratico2_20221\Application\obj\Debug\netcoreapp3.1\Application.pdb
+C:\Dev\lfa_trabalhopratico2_20221\Application\obj\Debug\netcoreapp3.1\Application.genruntimeconfig.cache
