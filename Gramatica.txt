@@ -1,7 +1,4 @@
 S => XB | AB
-S => a
 X => AS
 A => a
 B => b
-C => AB
-D => XA | a|b|XY

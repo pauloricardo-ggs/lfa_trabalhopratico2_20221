@@ -9,11 +9,12 @@ namespace Application
     {
         static void Main(string[] args)
         {
-            CriarGramatica();
+            var gramatica = CriarGramatica();
+            Console.WriteLine(gramatica.Imprimir());
             Console.ReadLine();
         }
 
-        public static void CriarGramatica()
+        public static Gramatica CriarGramatica()
         {
             var caminho = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName;
             var linhas = File.ReadAllLines($@"{caminho}\Gramatica.txt");
@@ -44,6 +45,8 @@ namespace Application
                     gramatica.AdicionarProducaoARegra(indexRegra, producoes);
                 }
             }
+
+            return gramatica;
         }
     }
 }

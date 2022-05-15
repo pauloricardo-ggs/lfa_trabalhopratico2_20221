@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Application
 {
@@ -8,12 +10,21 @@ namespace Application
         {
             Elementos = new List<char>();
         }
-
         public Producao(List<char> elementos)
         {
             Elementos = elementos;
         }
 
-        public List<char> Elementos { get; set; }
+        private List<char> Elementos { get; set; }
+
+        public StringBuilder Imprimir(StringBuilder sb)
+        {
+            foreach (var elemento in Elementos)
+            {
+                sb.Append(elemento.ToString());
+            }
+
+            return sb;
+        }
     }
 }
