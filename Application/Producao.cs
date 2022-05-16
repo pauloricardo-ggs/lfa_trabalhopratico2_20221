@@ -6,6 +6,7 @@ namespace Application
 {
     public class Producao
     {
+        // Construtores
         public Producao()
         {
             Elementos = new List<char>();
@@ -15,8 +16,10 @@ namespace Application
             Elementos = elementos;
         }
 
+        // Propriedades
         private List<char> Elementos { get; set; }
 
+        // Métodos
         public StringBuilder Imprimir(StringBuilder sb)
         {
             foreach (var elemento in Elementos)

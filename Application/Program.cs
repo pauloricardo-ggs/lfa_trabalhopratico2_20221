@@ -16,21 +16,16 @@ namespace Application
 
         public static Gramatica CriarGramatica()
         {
-            var caminho = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName;
-            var linhas = File.ReadAllLines($@"{caminho}\Gramatica.txt");
-
             var gramatica = new Gramatica();
 
-            foreach(var linha in linhas)
+            foreach (var linha in LinhasDoArquivo())
             {
-                var linhaFormatada = linha.Replace(" ", "").Replace(">", "");
-                var regraInteira = linhaFormatada.Split("=").ToList();
+                var regras = FormatarRegra(linha);
+                var nome = regras[0];
 
-                var nome = regraInteira[0];
-                
-                var producoesInteiras = (regraInteira[1].Split("|").ToList());
                 var producoes = new List<Producao>();
-                foreach(var producaoInteira in producoesInteiras)
+
+                foreach (var producaoInteira in SepararProducoes(regras))
                 {
                     producoes.Add(new Producao(producaoInteira.ToCharArray().ToList()));
                 }
@@ -48,5 +43,21 @@ namespace Application
 
             return gramatica;
         }
+
+        private static List<string> SepararProducoes(List<string> regras)
+        {
+            return (regras[1].Split("|").ToList());
+        }
+        private static List<string> FormatarRegra(string linha)
+        {
+            var linhaFormatada = linha.Replace(" ", "").Replace(">", "");
+            return linhaFormatada.Split("=").ToList();
+        }
+        private static string[] LinhasDoArquivo()
+        {
+            var caminho = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName;
+            return File.ReadAllLines($@"{caminho}\Gramatica.txt");
+        }
+
     }
 }

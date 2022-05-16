@@ -6,13 +6,16 @@ namespace Application
 {
     public class Gramatica
     {
+        // Construtores
         public Gramatica()
         {
             Regras = new List<Regra>();
         }
 
+        // Propriedades
         private List<Regra> Regras { get; set; }
     
+        // Métodos
         public void AdicionarRegra(string nome, List<Producao> producoes)
         {
             Regras.Add(new Regra(nome, producoes));

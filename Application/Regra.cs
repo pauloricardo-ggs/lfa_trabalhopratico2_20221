@@ -6,6 +6,7 @@ namespace Application
 {
     public class Regra
     {
+        // Construtores
         public Regra()
         {
             Producoes = new List<Producao>();
@@ -16,9 +17,11 @@ namespace Application
             Producoes = producoes;
         }
 
+        // Propriedades
         private string Nome { get; set; }
         private List<Producao> Producoes { get; set; }
 
+        // Métodos
         public string GetNome()
         {
             return Nome;
@@ -34,7 +37,9 @@ namespace Application
             foreach (var producao in Producoes)
             {
                 producao.Imprimir(sb);
-                if (Producoes.IndexOf(producao) != Producoes.Count-1)
+
+                var ultimaProducao = Producoes.IndexOf(producao) == Producoes.Count - 1;
+                if (!ultimaProducao)
                 {
                     sb.Append(" | ");
                 }
