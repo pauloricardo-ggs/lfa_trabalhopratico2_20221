@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace Application
 {
     public class Regra
     {
-        // Construtores
         public Regra()
         {
             Producoes = new List<Producao>();
@@ -17,18 +15,20 @@ namespace Application
             Producoes = producoes;
         }
 
-        // Propriedades
-        private string Nome { get; set; }
-        private List<Producao> Producoes { get; set; }
+        public string Nome { get; private set; }
+        public List<Producao> Producoes { get; private set; }
 
-        // Métodos
-        public string GetNome()
-        {
-            return Nome;
-        }
         public void AdicionarProducoes(List<Producao> producoes)
         {
             Producoes.AddRange(producoes);
+        }
+        public bool ProduzRegras()
+        {
+            foreach(var producao in Producoes)
+            {
+                if (producao.Elementos.Count > 1) return true;
+            }
+            return false;
         }
         public void Imprimir(StringBuilder sb)
         {

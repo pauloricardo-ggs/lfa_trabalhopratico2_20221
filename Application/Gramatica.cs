@@ -1,51 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace Application
 {
     public class Gramatica
     {
-        // Construtores
         public Gramatica()
         {
             Regras = new List<Regra>();
         }
 
-        // Propriedades
-        private List<Regra> Regras { get; set; }
+        public  List<Regra> Regras { get; private set; }
     
-        // Métodos
         public void AdicionarRegra(string nome, List<Producao> producoes)
         {
             Regras.Add(new Regra(nome, producoes));
         }
-        public int ContemNomeRegra(string nome)
+        public Regra ObterRegra(string nome)
         {
             foreach (var regra in Regras)
             {
-                if(regra.GetNome() == nome)
+                if (regra.Nome == nome) return regra;
+            }
+            return null;
+        }
+        public List<Regra> ObterRegras(string producao)
+        {
+            var regras = new List<Regra>();
+            foreach (var regra in Regras)
+            {
+                foreach (var prod in regra.Producoes)
                 {
-                    return Regras.IndexOf(regra);
+                    if (prod.ProducaoString.Equals(producao)) regras.Add(regra);
                 }
             }
-
-            return -1;
-        }
-        public void AdicionarProducaoARegra(int indexRegra, List<Producao> producoes)
-        {
-            Regras[indexRegra].AdicionarProducoes(producoes);
+            return regras;
         }
         public string Imprimir()
         {
             StringBuilder sb = new StringBuilder();
-
             foreach (var regra in Regras)
             {
                 regra.Imprimir(sb);
                 sb.AppendLine();
             }
-
             return sb.ToString();
         }
     }

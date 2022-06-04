@@ -1,32 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Application
 {
     public class Producao
     {
-        // Construtores
         public Producao()
         {
             Elementos = new List<char>();
         }
-        public Producao(List<char> elementos)
+        public Producao(string producaoString)
         {
-            Elementos = elementos;
+            ProducaoString = producaoString;
+            Elementos = producaoString.ToList();
         }
 
-        // Propriedades
-        private List<char> Elementos { get; set; }
+        public string ProducaoString { get; private set; }
+        public List<char> Elementos { get; private set; }
 
-        // Métodos
         public StringBuilder Imprimir(StringBuilder sb)
         {
-            foreach (var elemento in Elementos)
-            {
-                sb.Append(elemento.ToString());
-            }
-
+            sb.Append(ProducaoString);
             return sb;
         }
     }
